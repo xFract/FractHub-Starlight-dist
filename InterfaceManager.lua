@@ -535,13 +535,15 @@ end
 end,
 },"__ifm_theme_dropdown")
 
-n:CreateBind({
+n:CreateInput({
 Name="Menu Keybind",
+PlaceholderText=l.MenuKeybind,
 CurrentValue=l.MenuKeybind,
-ChangedCallback=function(o)
+Callback=function(o)
+if o and o~=""then
 i:SetMinimizeBind(o)
+end
 end,
-Callback=function()end,
 },"__ifm_menu_keybind")
 
 n:CreateParagraph({
